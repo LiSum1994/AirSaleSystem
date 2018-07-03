@@ -1,0 +1,43 @@
+﻿@{
+            ViewBag.Title = "用户注册";
+}
+@model User1
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>用户管理 | 用户注册</h2>
+<br />
+
+@using (Html.BeginForm("SysAdminRegisterSave", "SysAdmin"))
+{
+<div>
+                @Html.ValidationSummary()
+                <table class="table table-bordered">
+                    <tr>
+                        <td>账 户 ：</td>
+                        <td>
+                            @Html.TextBoxFor(o => o.UserName)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>密 码 ：</td>
+                        <td>
+                            @Html.PasswordFor(o => o.UserPassword)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.ActionLink("已有账号...", "SysIndex", "SysAdmin")</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">注册</button>
+                            <button type="reset" class="btn btn-warning">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            
+</div>
+}

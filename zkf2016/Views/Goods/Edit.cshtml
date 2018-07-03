@@ -1,0 +1,57 @@
+﻿@model Goods1
+@{
+    ViewBag.Title = "修改商品";
+
+}
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>库存管理 | 商品信息修改</h2>
+<br />
+
+@using (Html.BeginForm("EditSave", "Goods"))
+{
+
+    <input type="hidden" value="@Model.GoodsId" name="Id" />
+    <table class="table table-bordered">
+        <tr>
+            <td>商品名称：</td>
+            <td>
+                @Html.TextBox("name")
+                <div>@Html.ValidationMessageFor(o => o.GoodsName)</div>
+            </td>
+        </tr>
+        <tr>
+            <td>商品采购价格</td>
+            <td>
+                @Html.TextBox("buyprice")
+                <div>@Html.ValidationMessageFor(o => o.GoodsBuyPrice)</div>
+            </td>
+        </tr>
+        <tr>
+            <td>商品销售价格</td>
+            <td>
+                @Html.TextBox("sellprice")
+                <div>@Html.ValidationMessageFor(o => o.GoodsSellPrice)</div>
+            </td>
+        </tr>
+        <tr>
+            <td>商品数量</td>
+            <td>
+                @Html.TextBox("number")
+                <div>@Html.ValidationMessageFor(o => o.GoodsNumber)</div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">保存</button>
+                <button type="reset" class="btn btn-warning">取消</button>
+            </td>
+        </tr>
+    </table>
+}

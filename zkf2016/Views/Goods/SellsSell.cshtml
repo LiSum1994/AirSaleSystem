@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "商品销售";
+    var articles = ViewBag.Goods as List<Goods1>;
+}
+@model Goods1
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>销售管理 | 商品出售</h2>
+<br />
+
+@using (Html.BeginForm("SellSave", "Goods"))
+{
+    <div>
+        
+         @Html.ValidationSummary()
+        
+        <table class="table table-bordered">
+            <tr>
+                <td>商品名称 ：</td>
+                <td>
+                    @Html.TextBoxFor(o => o.GoodsName)
+                </td>
+
+            </tr>
+            <tr>
+                <td>商品采购价格 ：</td>
+                <td>
+                    @Html.TextBoxFor(o => o.GoodsBuyPrice)
+                </td>
+
+            </tr>
+            <tr>
+                <td>商品售出价格 ：</td>
+                <td>
+                    @Html.TextBoxFor(o => o.GoodsSellPrice)
+                </td>
+
+            </tr>
+            <tr>
+                <td>商品采购数量 ：</td>
+                <td>
+                    @Html.TextBoxFor(o => o.GoodsNumber)
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">销售</button>
+                    <button type="reset" class="btn btn-warning">取消</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+}

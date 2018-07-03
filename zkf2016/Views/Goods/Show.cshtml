@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "商品信息";
+}
+
+<h2>空调产品 | 详情页</h2>
+<br />
+<br />
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+
+<h2>@Model.GoodsName</h2>
+
+<h3>
+    <div>采购价格：@Model.GoodsBuyPrice</div>
+    <div>销售价格：@Model.GoodsSellPrice</div>
+    <div>商品数量：@Model.GoodsNumber</div>
+    <div>商品采购日期：@Model.GoodsBuyDate</div>
+
+</h3>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "销售管理";
+    var articles = ViewBag.Goods as List<Goods1>;
+
+}
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>销售管理 | abc</h2>
+<br />
+
+<fieldset>
+    <form method="get" action="@Url.Action("GIndex")">搜索： <input type="text" name="q" value="@ViewBag.q" />  <input type="submit" value="搜索" /> </form>
+</fieldset>
+<ol>
+    @foreach (var item in articles)
+    {
+        <li>
+            @Html.ActionLink("[  删除  ]", "Delete", new { id = item.GoodsId }) |
+            <a href="@Url.Action("",new { id=item.GoodsId})">@item.GoodsName</a>
+        </li>
+    }
+</ol>

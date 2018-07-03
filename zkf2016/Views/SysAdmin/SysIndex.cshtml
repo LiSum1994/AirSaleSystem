@@ -1,0 +1,45 @@
+﻿
+@{
+            ViewBag.Title = "用户登录";
+}
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>进销存管理系统 | 用户登录</h2>
+<br />
+
+<form action="/SysAdmin/SysLogin" method="post">
+    <table align="center" width="100%">
+        <tr>
+            <td width="33%"></td>
+            <td colspan="2">
+                <div class="input-group">
+                    <span class="input-group-addon" style="width:100px; height:40px;">用户名：</span>
+                    <input type="text" name="UserName" class="form-control" placeholder="请输入账号" style="width:250px; height:40px;">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" style="width:100px;height:40px">密&nbsp;&nbsp;码：</span>
+                    <input type="password" name="UserPassword" class="form-control" placeholder="请输入密码" style="width:250px; height:40px;">
+                </div>
+            </td>
+        </tr>
+        <tr><td colspan="3" height="20px;"></td></tr>
+        <tr>
+            <td align="center" colspan="3">
+                --------------
+                
+                <button type="submit" class="btn btn-success" style="width:80px;">登录</button>--------------
+                <button type="reset" class="btn btn-danger" style="width:80px;">取消</button>--------------
+                <button type="button" onclick="javascript: window.location = '/SysAdmin/SysAdminRegister'" class="btn btn-primary" style="width:80px;">注册</button>--------------
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+

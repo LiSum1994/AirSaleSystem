@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "库存管理";
+    var articles = ViewBag.Goods as List<Goods1>;
+
+}
+
+<style type="text/css">
+    body {
+        background-image: url("../../img/1480505672669.jpg");
+    }
+</style>
+
+<h2>库存管理 | 查询</h2>
+<br />
+
+<fieldset>
+    <form method="get" action="@Url.Action("GIndex")">按商品名搜索： <input type="text" name="a" value="@ViewBag.a" />  <input type="submit" value="搜索" /> </form>
+</fieldset>
+
+<br />
+
+<h3>库存管理 | 商品库存列表</h3>
+<h3>
+    
+    <img src="~/img/空调01.jpg" />
+    <br />
+    <br />
+    
+    <ol>
+        @foreach (var item in articles)
+        {
+            <li>
+                         <a href="@Url.Action("Show",new { id=item.GoodsId})">@item.GoodsName</a> 
+                           @Html.ActionLink("[  修改商品 ]", "Edit", new { id = item.GoodsId }) |  
+                            @Html.ActionLink("[  删除商品 ]", "Delete", new { id = item.GoodsId }) | 
+             
+            </li>
+        }
+    </ol>
+</h3>
